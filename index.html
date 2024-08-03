@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+            <!--sabi ko dito sa href is pasok ka sa css na folder makikita mo yung styles.css-->
+    <title>My Personal Website</title>
+</head>
+<body> 
+    <nav class="active">
+    <ul id="navigation">
+        <li class="active" id="nav1"><a href="#home">Home</a></li>
+        <li><a href="#about" id="nav2">About</a></li>
+        <li><a href="#portfolio" id="nav3">Portfolio</a></li>
+        <li><a href="#contact" id="nav4">Contact</a></li>
+    </ul>
+    </nav>
+    <section id="home">
+        <button onclick="goToAbout()">Let's Get Started</button>
+    </section>
+    <section id="about">
+        <div id="about-content">
+            <h1>About Me</h1>
+            <p>I'm Angela Motel, a dedicated third-year college student with a strong work ethic. I'm actively working towards my degree in Information Technology,
+            specializing in Business Analytics at Batangas State University. Recently, I've become increasingly captivated by the world of web development and design. 
+            This growing interest has intensified my ambition to embark on a career as a programmer.</p>
+        <div class="row">    
+            <div class="column">
+                <!--First Column-->
+                <h2>School Organization</h2>
+                <ul>College of Informatics and Computing Science
+                    <br>SY 2021 – 2025
+                </ul>
+                <ul>Integrated Information Technology Student Society
+                    <br>SY 2021 – 2025
+                </ul>
+                <ul>Lady Generals Emilio Aguinaldo Womens Volleyball Team
+                    <br>SY 2019 – 2021
+                </ul>
+                <ul>Blue Lions BCS Womens Volleybal Team
+                    <br>SY 2013 – 2019
+                </ul>
+            </div>
+            <div  class="column"><!--Second Column-->
+   <!--Second Column-->
+   <h2>Educational Background</h2>
+   <ul>(Teriary) Batangas State University
+       <br>Bachelor of Science in Information Technology
+       <br>SY 2021 – 2025
+       <br> Emilio Aguinaldo College- Manila
+       <br>Bachelor of Science in Information Technology
+       <br>SY 2019 – 2021
+   </ul>
+   <ul>(Senior High) Batangas Christian School
+       <br>Science, Technology, Engineering and Mathematics
+       <br>SY 2017 – 2019
+   </ul>
+   <ul>(Junior High) Batangas Christian School
+       <br>SY 2013 – 2017
+   </ul>
+   <ul>(Primary) Paharang Elementary School
+       <br>SY 2007 – 2013
+   </ul>
+            </div>
+            <div  class="column"><!--Thrid Column-->
+   <!-- Column-->
+   <h2>Soft and Hard Skills</h2>
+   <ul>Adaptability</ul>
+   <ul>Attention to Detail</ul>
+   <ul>Time Management</ul>
+   <ul>Good Communication</ul>
+   <ul>Interpersonal Skills</ul>
+   <ul>Web Development</ul>
+   <ul>MIcrosoft Office</ul>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <section id="portfolio">
+        <div id="portfolio-content">
+            <div id="space" >
+            <h1>My Portfolio</h1>
+            <p>Welcome to my portfolio, where I showcase my creative work in web development and design. 
+            <br>Discover my e-certificates as a testament to my dedication to learning and striving for excellence.</p>
+            </div>
+            <div class="group-photos">
+                <div class="group-photo">
+                    <img src="img/p1.JPG" alt="Group Photo 1">
+                   
+                </div>
+                <div class="group-photo">
+                    <img src="img/p2.jpg" alt="Group Photo 2">
+                </div>
+                <div class="group-photo">
+                    <img src="img/p3.JPG" alt="Group Photo 3">
+                </div>
+            </div>
+            <div class="group-photos">    
+                <div class="group-photo">
+                    <img src="img/c1.JPG" alt="Group Photo 3">
+                </div>
+                <div class="group-photo">
+                    <img src="img/c2.JPG" alt="Group Photo 3">
+                </div>
+                <div class="group-photo">
+                    <img src="img/c3.JPG" alt="Group Photo 3">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div id="contact-content">
+            <h1>Contact Me</h1>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa fa-map-marker"></i> <!-- Address Icon -->
+                    <p>Purok 1 Bilogo Batangas City</p> <!-- Your Address -->
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-envelope"></i> <!-- Email Icon -->
+                    <p>motelangela13@gmail.com</p> <!-- Your Email -->
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-phone"></i> <!-- Phone Icon -->
+                    <p>0916-709-6719</p> <!-- Your Contact Number -->
+                </div>
+                <div class="copyright-notice">
+                    &copy; Copyright My Personal Website. All rights reserved.
+                    <br>Designed by Angela Motel
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+         // JavaScript to handle the color change
+         const navigationLinks = document.querySelectorAll('#navigation li a');
+
+navigationLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Remove 'active' class from all links
+        navigationLinks.forEach(link => link.classList.remove('active'));
+        // Add 'active' class to the clicked link
+        e.target.classList.add('active');
+    });
+});
+          function goToAbout() {
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, 800, function () {
+                $('nav').addClass('active'); // Add "active" class to the navigation bar
+                $('li').removeClass('active'); // Remove "active" class from all list items
+                $('li:nth-child(2)').addClass('active'); // Add "active" class to the About list item
+            });
+        }
+   function goToAbout() {
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, 800, function() {
+                $('nav').addClass('active');
+            });
+        }
+ function goToAbout() {
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, 800, function(){
+                $('nav').show(); // Show the navigation bar
+            });
+        }
+    
+        $(document).ready(function(){
+            $('a').on('click', function(event) {
+                if (this.hash !== '') {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        if(hash === '#home'){
+                            $('nav').hide();
+                        } else {
+                            $('nav').show();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
